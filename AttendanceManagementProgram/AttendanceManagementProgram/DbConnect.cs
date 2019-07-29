@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data;
 
 namespace AttendanceManagementProgram
 {
@@ -20,14 +22,22 @@ namespace AttendanceManagementProgram
         /// IDとPWをデータベースから取得する
         /// </summary>
         /// <returns></returns>
-        public void IdPwGet(string id,string pw)
+        public void IdPwGet()
         {
 
-            this.Id = id;
-            this.Pw = pw;
-
             var dbIdPw = new Db();
-            dbIdPw.DbData(this.Id,this.Pw);
+            DataSet data = new DataSet();
+
+            dbIdPw.DbData();
+            {
+                //カラム名の取得
+                var idColumnName = data.dataset.Tables[0].Columns[0].ColumnName;
+                var nameColumnName = company.Tables[0].Columns[1].ColumnName;
+                var ageColumnName = company.Tables[0].Columns[2].ColumnName;
+
+            };
+
+            MessageBox.Show(dbIdPw.Id);
 
             var idList = new string[] { dbIdPw.Id };
             foreach (var n in idList)
