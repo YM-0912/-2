@@ -26,14 +26,9 @@ namespace AttendanceManagementProgram
         {
 
             var dbIdPw = new Db();
-            DataSet data = new DataSet();
 
-            dbIdPw.DbData();
+            dbIdPw.DataTable();
             {
-                //カラム名の取得
-                var idColumnName = data.dataset.Tables[0].Columns[0].ColumnName;
-                var nameColumnName = company.Tables[0].Columns[1].ColumnName;
-                var ageColumnName = company.Tables[0].Columns[2].ColumnName;
 
             };
 

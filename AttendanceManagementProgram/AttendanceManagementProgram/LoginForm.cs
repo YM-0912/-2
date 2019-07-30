@@ -41,7 +41,7 @@ namespace AttendanceManagementProgram
             //クラス：ログイン認証可否判定のインスタンス生成
             var idPwCheck = new IdPwCheck();
             //LoginFormで入力されたID/PWを渡す
-            idPwCheck.OkNg(EmployeeNumber, PassWord);
+            //idPwCheck.OkNg(EmployeeNumber, PassWord);
         }
     }
 }

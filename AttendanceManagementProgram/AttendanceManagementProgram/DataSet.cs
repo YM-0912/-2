@@ -4,14 +4,8 @@ namespace AttendanceManagementProgram
 {
     partial class DataSet
     {
-        partial class DataTable1
+        partial class DataTable
         {
-            //Datasetの作成
-            DataSet dataset = new DataSet();
-            //DataTableの作成
-            DataTable table = new DataTable();
-
-            //列を追加
 
         }
     }

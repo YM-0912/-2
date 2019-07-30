@@ -24,7 +24,7 @@ namespace AttendanceManagementProgram
 
             //クラス：データベースに接続のインスタンスを生成
             var dbCon = new DbConnect();
-            dbCon.IdPwGet(this.Id,this.Pw);
+            dbCon.IdPwGet();
 
             if (dbCon.Id == this.Id && dbCon.Pw == this.Pw)
             {

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Windows.Forms;
 
 namespace AttendanceManagementProgram
 {
@@ -17,43 +18,28 @@ namespace AttendanceManagementProgram
         public string Id { get; set; }          //社員番号
         public string Pass { get; set; }        //パスワード
 
+        public void DataTable()
+        {
+            var dataset = new DataSet();
 
-        //列を追加
-        
+            var data1 = dataset.EmployeeData.NewEmployeeDataRow();
+            data1.Name = "田中太郎";
+            data1.Id = "0001";
+            data1.PassWord = "11111111";
 
-        //public void DbData()
-        //{
-        //    カラム名と型を定義
-        //    var name = new DataColumn("Name", typeof(string));
-        //    table.Columns.Add(name);
-        //    var id = new DataColumn("Id", typeof(string));
-        //    table.Columns.Add(id);
-        //    var pass = new DataColumn("Pass", typeof(string));
-        //    table.Columns.Add(pass);
+            dataset.EmployeeData.AddEmployeeDataRow(data1);
 
-        //    datatableをdatasetに追加
-        //    dataset.Tables.Add(table);
+            var nameColumnName = dataset.EmployeeData.NameColumn.ColumnName;
+            var idColumnName = dataset.EmployeeData.IdColumn.ColumnName;
+            var passWordName = dataset.EmployeeData.PassWordColumn.ColumnName;
 
-        //    DataRowの定義
-        //    var table1 = table.NewRow();
-        //    table1["Name"] = "田中一郎";
-        //    table1["Id"] = "0001";
-        //    table1["Pw"] = "11111111";
+            var r = dataset.EmployeeData.Rows[0];
 
-        //    var table2 = table.NewRow();
-        //    table1[0] = "山田二郎";
-        //    table1[1] = "0002";
-        //    table1[2] = "22222222";
+            MessageBox.Show($"{nameColumnName}:{r[nameColumnName]}" +
+                            $"{idColumnName}:{r[idColumnName]}" +
+                            $"{passWordName}:{r[passWordName]}");
 
-        //    var table3 = table.NewRow();
-        //    table1[0] = "木村三郎";
-        //    table1[1] = "0003";
-        //    table1[2] = "33333333";
+        }
 
-        //    datatableへ追加
-        //    table.Rows.Add(table1);
-        //    table.Rows.Add(table2);
-        //    table.Rows.Add(table3);
-        //}
     }
 }
