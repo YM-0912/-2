@@ -29,22 +29,22 @@ namespace AttendanceManagementProgram
 
             dbIdPw.DataTable();
             {
-
+                
             };
 
             MessageBox.Show(dbIdPw.Id);
 
-            var idList = new string[] { dbIdPw.Id };
-            foreach (var n in idList)
-            {
-                this.Id = n;
-            }
+            //var idList = new string[] { dbIdPw.Id };
+            //foreach (var n in idList)
+            //{
+            //    this.Id = n;
+            //}
 
-            var pwList = new string[] { dbIdPw.Pass };
-            foreach (var n in pwList)
-            {
-                this.Pw = n;
-            }
+            //var pwList = new string[] { dbIdPw.Pass };
+            //foreach (var n in pwList)
+            //{
+            //    this.Pw = n;
+            //}
 
         }
     }

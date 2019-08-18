@@ -26,18 +26,23 @@ namespace AttendanceManagementProgram
             data1.Name = "田中太郎";
             data1.Id = "0001";
             data1.PassWord = "11111111";
-
             dataset.EmployeeData.AddEmployeeDataRow(data1);
 
-            var nameColumnName = dataset.EmployeeData.NameColumn.ColumnName;
-            var idColumnName = dataset.EmployeeData.IdColumn.ColumnName;
-            var passWordName = dataset.EmployeeData.PassWordColumn.ColumnName;
+            var data2 = dataset.EmployeeData.NewEmployeeDataRow();
+            data2.Name = "山田次郎";
+            data2.Id = "0002";
+            data2.PassWord = "22222222";
+            dataset.EmployeeData.AddEmployeeDataRow(data2);
 
-            var r = dataset.EmployeeData.Rows[0];
+            //var nameColumnName = dataset.EmployeeData.NameColumn.ColumnName;
+            //var idColumnName = dataset.EmployeeData.IdColumn.ColumnName;
+            //var passWordName = dataset.EmployeeData.PassWordColumn.ColumnName;
 
-            MessageBox.Show($"{nameColumnName}:{r[nameColumnName]}" +
-                            $"{idColumnName}:{r[idColumnName]}" +
-                            $"{passWordName}:{r[passWordName]}");
+            //var data = dataset.EmployeeData.Rows[0];
+
+            //MessageBox.Show($"{nameColumnName}:{data[nameColumnName]}" +
+            //                $"{idColumnName}:{data[idColumnName]}" +
+            //                $"{passWordName}:{data[passWordName]}");
 
         }
 
